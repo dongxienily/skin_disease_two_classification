@@ -168,7 +168,8 @@ def Split_datatset(dataset_txt_path,train_txt_path,test_txt_path):
     img_paths,labels = [],[]
     dict_skin={
         'normal':0,
-        'circle':1
+        'circle':1，
+        'crack' :2
     }
     with open(dataset_txt_path,'r') as f:
         lines = f.read().split('\n')
