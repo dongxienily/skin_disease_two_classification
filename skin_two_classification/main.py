@@ -103,7 +103,7 @@ def train(train_loader,model,criterion,optimizer,epoch,use_cuda):
 
     for (inputs,targets) in tqdm(train_loader):
         if use_cuda:
-            inputs,targets = inputs.cuda(),targets.cuda(async=True)
+            inputs,targets = inputs.cuda(),targets.cuda()
         inputs,targets = torch.autograd.Variable(inputs), torch.autograd.Variable(targets)
 
         # 梯度参数设为0
