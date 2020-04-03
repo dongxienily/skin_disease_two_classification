@@ -55,10 +55,10 @@ def create_maliganant_set(json_path,txt_path):
             clinical = sample['meta']['clinical']
             if 'benign_malignant' not in clinical.keys():
                 continue
-            elif clinical['benign_malignant'] == 'malignant':
+            elif clinical['benign_malignant'] == 'circle':
                 mal_img_names.append(key+".jpg")
                 mal_labels.append(clinical['benign_malignant'])
-            elif clinical['benign_malignant'] == 'benign':
+            elif clinical['benign_malignant'] == 'normal':
                 benign_img_names.append(key+'.jpg')
                 benign_labels.append(clinical['benign_malignant'])
             else:
