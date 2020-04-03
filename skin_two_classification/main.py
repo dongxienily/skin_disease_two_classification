@@ -36,10 +36,10 @@ def main():
     # data
     transformations = get_transforms(input_size=args.image_size,test_size=args.image_size)
     train_set = data_gen.Dataset(root=args.train_txt_path,transform=transformations['val_train'])
-    train_loader = data.DataLoader(train_set,batch_size=args.batch_size,shuffle=True)
+    train_loader = data.DataLoader(train_set,batch_size=args.batch_size,shuffle=True,num_workers=4)
 
     val_set = data_gen.ValDataset(root=args.val_txt_path,transform=transformations['val_test'])
-    val_loader = data.DataLoader(val_set,batch_size=args.batch_size,shuffle=False)
+    val_loader = data.DataLoader(val_set,batch_size=args.batch_size,shuffle=False,num_workers=4)
 
     # model
     model = make_model(args)
