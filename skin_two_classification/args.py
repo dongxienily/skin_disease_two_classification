@@ -46,7 +46,7 @@ parser.add_argument('--epochs',default=200,type=int,metavar='N')
 
 parser.add_argument('--image-size',type=int,default=299)
 parser.add_argument('--arch',default='resnet50',choices=['resnet34','resnet18','resnet50'])
-parser.add_argument('--num_classes',default=2,type=int)
+parser.add_argument('--num_classes',default=3,type=int)
 
 # model path
 parser.add_argument('--model_path',default='./checkpoints/model_16_7165_10000.pth',type=str)
