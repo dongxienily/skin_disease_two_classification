@@ -39,7 +39,7 @@ parser.add_argument('--weight-decay', '--wd', default=1e-4, type=float,
 # training
 parser.add_argument("--checkpoint",type=str,default='./checkpoints')
 parser.add_argument("--resume",default='',type=str,metavar='PATH',help='path to save the latest checkpoint')
-parser.add_argument("--batch_size",type=int,default=16)
+parser.add_argument("--batch_size",type=int,default=32)
 parser.add_argument("--start_epoch",default=0,type=int,metavar='N')
 parser.add_argument('--epochs',default=200,type=int,metavar='N')
 
