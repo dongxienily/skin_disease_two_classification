@@ -53,8 +53,8 @@ class RandomGaussianBlur(object):
 
 def get_train_transform(mean,std,size):
     train_transform = transforms.Compose([
-        Resize((int(size*(256/224)),int(size*(256/224)))),
-        transforms.RandomCrop(size),
+       # Resize((int(size*(256/224)),int(size*(256/224)))),
+       # transforms.RandomCrop(size),
         transforms.RandomRotation(degrees=15),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
@@ -64,15 +64,15 @@ def get_train_transform(mean,std,size):
 
 def get_test_transform(mean,std,size):
     return transforms.Compose([
-        Resize((int(size*(256/224)),int(size*(256/224)))),
-        transforms.CenterCrop(size),
+       # Resize((int(size*(256/224)),int(size*(256/224)))),
+       # transforms.CenterCrop(size),
         transforms.ToTensor(),
         transforms.Normalize(mean=mean,std=std),
     ])
 
 
-def get_transforms(input_size=224,test_size=224,backbone=None):
-    mean,std = [0.485, 0.456, 0.406], [0.229, 0.224, 0.225]
+def get_transforms(input_size=299,test_size=299,backbone=None):
+    mean,std = [0.22,0.23,0.25], [0.30,0.32,0.33]
     if backbone is not None and backbone in ['pnasnet5large', 'nasnetamobile']:
         mean, std = [0.5, 0.5, 0.5], [0.5, 0.5, 0.5]
     transformations = {}
