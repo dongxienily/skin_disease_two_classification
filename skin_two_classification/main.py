@@ -53,7 +53,7 @@ def main():
         criterion = nn.CrossEntropyLoss()
 
     optimizer = get_optimizer(model,args)
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.2, patience=2, verbose=False)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.2, patience=5, verbose=False)
 
     # load checkpoint
     start_epoch = args.start_epoch
